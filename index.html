@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport"></meta>
+<meta charset="utf-8"></meta>
+<script type="text/javascript" src="js/jquery.min.js"> </script>
+
+<script>
+    $.getJSON('earthquakeNE.json', function(data) {
+        
+
+        var latest = "<div class='date'> ईसं "+data.earthquake[0].Date+"</div>"
+            latest += "<div class='localtime'>समय "+data.earthquake[0].LocalTime+"</div>"
+            latest += "<div class='magnitude'>"+data.earthquake[0].Magnitude+"</div>"
+            latest += "<div class='epicentre'>"+data.earthquake[0].Epicentre+"</div>"
+            
+            
+        var output="<ul>";
+        
+        for (var i in data.earthquake) {
+            output+=" <li><b> " + data.earthquake[i].Magnitude + "&nbsp;&nbsp; </b>  " + data.earthquake[i].Date +" &nbsp; " + data.earthquake[i].LocalTime + " -&nbsp; " + data.earthquake[i].Epicentre+"</li>";
+        }
+
+        output+="</ul>";
+        
+        document.getElementById("output").innerHTML=output;
+        document.getElementById("latest").innerHTML=latest;
+        console.log(latest);
+  });
+
+</script>
+
+
+<style type="text/css">
+  body{
+    margin: 0;
+    padding: 0
+  }
+  .wrapper {
+    width: 260px;
+    background-color: lightblue;
+  }
+  .date{
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    width: 40%;
+    text-align: left;
+    font-weight: bold;
+  }
+  .localtime{
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    width: 40%;
+    text-align: right;
+    font-weight: bold;
+
+  }
+  .magnitude{
+    clear: both;
+    font-weight: bold;
+    color: #f00;
+    font-size: 4em;
+    text-align: center;
+
+  }
+    .epicentre{
+    font-size: 1.5em;
+    margin-top: -10px;
+    text-align: center;
+  }
+  ul{
+    margin: 0 0 0 0;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+  li{
+ 
+   width: 100%;
+    margin: 0 0 0 0;
+    text-align: left;
+    font-size: .9em;
+
+  }
+.header{
+  background-color: white;
+  text-align: center;
+  font-size: 1.8em;
+}
+.credit{
+  font-size: .7em;
+  background-color: white;
+}
+.right {
+  float:right;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="header">पछिल्लो भूकम्प गतिविधि</div>
+    <div id="latest"></div>
+    <div id="output"></div>
+    <div class="credit">
+      <span class="left"><i>source: </i><a href="http://seismonepal.gov.np/" target="_blank">seismonepal.gov.np</a></span>
+      <span class="right"><i> </i><a href="http://rvibek.com.np" target="_blank">rvibek</span>  
+    </div>
+    
+
+</div>
+
+
+
+</body>
+</html>
