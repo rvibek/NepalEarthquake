@@ -5,3 +5,12 @@ A simple widget that fetches seismic activities from [seismonepal](http://www.se
 The widget is being used in [himalkhabar](http://www.himalkhabar.com)
 
 For further info visit: [rvibek.com.np/json-file-for-seismic-activities-in-nepal](http://rvibek.com.np/json-file-for-seismic-activities-in-nepal/) 
+
+##
+I have put these scripts in [OpenShift](http://openshift.com) The accompanying 
+
+>getCSV.sh 
+>earthquake.py
+>earthquakeCSV2JSON.py
+
+files are put in cron which updates CSVs and JSON every hour
