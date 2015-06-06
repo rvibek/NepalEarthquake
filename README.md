@@ -23,3 +23,5 @@ files are put in cron which updates CSVs and JSON every hour
 A simple HTML widget displays the latest seismic activities in Nepali [Example](https://app-weather.rhcloud.com/data/earthquake/)
 * earthquakeCSV2JSON.py converts CSV into earthquakeNE.json
 
+##Widget Example
+![NepalEarthquake Widget](https://github.com/rvibek/NepalEarthquake/blob/master/images/NepalEarthquake_Widget.png)
